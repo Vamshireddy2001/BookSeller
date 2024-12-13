@@ -1,0 +1,161 @@
+.HeaderContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    height:180px;
+}
+.HeaderContainer .SearchNavHeader
+{
+    width: 100%;
+    height:75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.SearchBar
+{
+    width:60%;
+    height:35px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+}
+.SearchBar input
+{
+    width:95%;
+    height:90%;
+    border: none;
+    margin-left:2px;
+    margin-right:2px;
+    text-indent:10px;
+}
+.SearchNavHeader button
+{
+    background: none;
+    background-color: #94aafa;
+    border: none;
+    width:80px;
+    height:40px;
+    color: white;
+}
+.SearchNavHeader button:hover
+{
+    color: black;
+}
+.NavigationHeader
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:25%;
+    background-color: #333333;
+}
+.NavigationHeader img:hover
+{
+    background-color: #FF571E;
+}
+.NavigationHeader h5
+{
+    color: white;
+    margin-left:10px;
+    margin-right:10px;
+    font-weight:600;
+    margin-right:20px;
+}
+.NavigationHeader img
+{
+    margin-right:20px;
+    margin-left: 0px;
+}
+.NavigationHeader .hoverButton
+{
+    width:auto;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hoverButton:hover
+{
+    background-color: #FF571E;
+    cursor: pointer;
+}
+
+
+.NavSubHeader
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height:100%;
+}
+.NavSubHeaderTwo
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height:100%;
+}
+
+
+.menuHeader
+{
+    filter: invert(100);
+}
+@media (max-width: 480px) {
+    .HeaderContainer
+    {
+        height:250px;
+    }
+   
+    .menuHeader
+    {
+        position: absolute;
+        top:20px;
+        left:10px;
+    }
+    .HeaderContainer .SearchNavHeader {
+        flex-direction: column;
+    }
+    .NavigationHeader
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction:column;
+        align-items: center;
+        height:25%;
+    }
+    .NavigationHeader  .NavSubHeader
+    {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height:50%;
+        width:100%;
+    }
+    
+    .NavigationHeader .NavSubHeaderTwo
+    {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height:50%;
+        width:100%;
+    }
+    .NavigationHeader h5
+    {
+        font-size:8px;
+    }
+}
+.loginbtns 
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:200px;
+}

@@ -1,0 +1,24 @@
+.GoogleSellerContainer
+{
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    width:100%;
+    height:auto;
+    flex-direction: column;
+}
+.subcontainergoogle
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 85%;
+    height: auto;
+    margin-left: 100px;
+}
+.GoogleSellerContainer h3
+{
+    margin-left:25px;
+    font-weight:500;
+}

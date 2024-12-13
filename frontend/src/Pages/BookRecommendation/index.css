@@ -1,0 +1,25 @@
+.SellerContainer
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.recommendation-list
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.recommendation-list ul
+{
+    display: flex;
+}
+.recommendation-list ul li
+{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

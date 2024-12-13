@@ -1,0 +1,36 @@
+.formrecommendation
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+}
+.formrecommendation form
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 500px; 
+}
+.formrecommendation form div
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.formrecommendation form div select,input
+{
+    background-color: transparent;
+    border: 1px solid black;
+    width: 200px;
+
+}
+.formrecommendation form  button
+{
+    width: 200px;
+    height: 40px;
+}

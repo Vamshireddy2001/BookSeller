@@ -1,0 +1,14 @@
+.SellerContainer
+{
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    width:100%;
+    height:auto;
+    flex-direction: column;
+}
+.SellerContainer h3
+{
+    margin-left:25px;
+    font-weight:500;
+}

@@ -1,0 +1,71 @@
+.CartContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.CartContainer .CartItems
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
+.CartItems .Titles
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+.CartItems .Items
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+.Titles .Section
+{
+    width:20%;
+    height: 70px;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid white;
+}
+.Titles .Section h2
+{
+    color:white;
+    font-weight:400;
+}
+.Items .Section
+{
+    width:20%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid rgb(197, 197, 197);
+}
+.Items  .Section h2
+{
+    color:black;
+    font-weight:400;
+    font-size: 13px;
+}
+.CartItems button
+{
+    margin-right:400px;
+    margin-top:30px;
+    width:40x;
+    height: 30px;
+    background-color: none;
+    border: 1px solid rgb(198, 198, 198);
+}

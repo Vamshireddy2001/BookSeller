@@ -1,0 +1,51 @@
+.FooterContainer
+{
+    display:flex;
+    width:100%;
+    height:500px;
+    flex-direction: column;
+    margin-top:20px;
+    justify-content:center;
+    align-items: flex-start;
+}
+.FooterContainer .SubFooterContainerOne
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:30%;
+    background-color:#94aafa;
+}
+.FooterContainer .SubFooterContainerTwo
+{
+    display: flex;
+    align-items: center;
+    background-color: #F2F2F2;
+    justify-content: space-around;
+    width:100%;
+    height:70%;
+}
+.menu h3
+{
+    font-weight:500;
+    font-size: 24px;
+}
+.textBorder
+{
+    border: none;
+    border: 1px solid #FF571E;
+    width:80px;
+    color:#FF571E;
+}
+.menu h4{
+    font-weight:300;
+    font-size: 15px;
+}
+.SubFooterContainerOne h2
+{
+    font-size:32px;
+    font-weight:500;
+    color: white;
+    letter-spacing:1px;
+}

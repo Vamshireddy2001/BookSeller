@@ -1,0 +1,23 @@
+.SellerContainer
+{
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    width:100%;
+    height:auto;
+}
+.SellerContainer h3
+{
+    margin-left:25px;
+    font-weight:500;
+}
+.flex
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery
+{
+    height: 450px;
+}
