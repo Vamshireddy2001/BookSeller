@@ -6,18 +6,18 @@ const cartFeature=async (req,res)=>{
 }
 
 const reminder=async (req,res)=>{
-  const notes=req.body;
+  const {bookName,genre,author,purchased,date,id}=req.body;
  
-  if(!notes)
-    return res.status(400).json({"message":"notes can't be empty!"});
+  if(!bookName || !genre || !author || !purchased)
+    return res.status(400).json({"message":"field can't be empty!"});
   
-  const note=new notesModel({'bookname':notes.bookName,'genre':notes.genre,'author':notes.author,'purchased':notes.purchased,
-    date:notes.date,id:notes.id
+  const note=new notesModel({'bookname':bookName,'genre':genre,'author':author,'purchased':purchased,
+    date:date,id:id
   });
   
   await note.save();
 
-  return res.status(400).json({"message":"notes has been saved"});
+  return res.status(201).json({"message":"notes has been saved"});
 }
 
 const fetchReminder=async (req,res)=>{
@@ -35,5 +35,20 @@ const fetchReminder=async (req,res)=>{
   return res.status(200).json({"message":"notes found",data:note});
 }
 
+const deleteNote=async (req,res)=>{
+  const {id}=req.body;
+ 
+  console.log("id",id);
+  if(!id)
+    return res.status(400).json({"message":"id can't be empty!"});
+  
+  const note=await notesModel.find({id:id});
 
-module.exports={reminder,cartFeature,fetchReminder};
+  if(!note && note.length<1)
+    return res.status(400).json({"message":"notes not found"});
+
+  await notesModel.deleteOne({_id:id})
+  return res.status(200).json({"message":"notes delete"});
+}
+
+module.exports={reminder,cartFeature,fetchReminder,deleteNote};

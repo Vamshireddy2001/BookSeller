@@ -25,7 +25,7 @@ function BestSeller()
         <div className='SellerContainer'>
             <Header prop={{"searchRequired":true}}/>
             {showAlertBox ?
-   (<AlertBox alertBox={handleAlert}/>):("")}
+              (<AlertBox alertBox={handleAlert}/>):("")}
           <h3>Best Seller</h3>
             { 
             bestSellerProp.map((element,index)=>(     

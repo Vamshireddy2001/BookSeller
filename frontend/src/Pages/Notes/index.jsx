@@ -5,11 +5,11 @@ import './index.css';
 import { fetchBooks, fetchBooksRecommendation } from '../../Api/googlebooks';
 import BookForm from '../../Components/BookRecommendation';
 import AddNotes from '../../Components/AddNotes';
-import { FetchNotes, NotesAPI } from '../../Api/notes';
+import { DeleteNote, FetchNotes, NotesAPI } from '../../Api/notes';
 import Cookies from 'js-cookie';
 function Notes() {
   const [reminder, setReminder] = useState([]);
-
+  const [message, setMessage] = useState([]);
   const handleSubmit = async (formData) => {
     try {
       // Clean up the author field (trim any leading/trailing spaces or tabs)
@@ -24,7 +24,8 @@ function Notes() {
       const response = await NotesAPI(updatedFormData);
        if(response)
        {
-        console.log("response",response)
+        alert(response.message);
+        setMessage(response.message)
        }
   
     } catch (error) {
@@ -33,6 +34,16 @@ function Notes() {
     }
   };
   
+  const handleDelete=async(id)=>{
+    console.log(id);
+    const deleted= await DeleteNote(id);
+    if(deleted)
+    {
+      alert(deleted.message);
+      window.location.reload();
+    }
+
+  }
 
   const fetchReminder=async()=>{
     const fetchData=await FetchNotes(Cookies.get('id'));
@@ -63,10 +74,12 @@ function Notes() {
                 <strong>Genre:</strong> {note.genre} <br />
                 <strong>Purchased:</strong> {note.purchased} <br />
                 <strong>Date:</strong> {note.date} <br />
+                <button style={{backgroundColor:"transparent",border:"1px solid black"}} onClick={()=>handleDelete(note._id)}>Delete Note</button>
               </li>
             ))}
           </ul>
         )}
+        <label>{message}</label>
       </div>
       <Footer />
     </div>

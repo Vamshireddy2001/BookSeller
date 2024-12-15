@@ -4,18 +4,19 @@ import url from "../Utils/Utils";
 async function NotesAPI(data)
 {
 
-    console.log("api",data);
     try
     {
         const response=await axios.post(`${url}/cart/addreminder`,JSON.stringify(data),{headers:{'Content-Type':'application/json'},withCredentials:true});
+        console.log(response.data);
+      
         if(response.data.login)
           return response.data;
         else
-          return false;
+          return response.data;
     }
      catch(err)
      {
-        throw new err;
+        return err;
      }
 }
 async function FetchNotes(id)
@@ -34,5 +35,22 @@ async function FetchNotes(id)
      }
 }
 
+async function DeleteNote(id)
+{
+  console.log("id",id);
+    try
+    {
+        const response=await axios.post(`${url}/cart/deletereminder`,JSON.stringify({"id":id}),{headers:{'Content-Type':'application/json'},withCredentials:true});
+        if(response)
+          return response.data;
+        else
+          return 'error:',response.data;
+    }
+     catch(err)
+     {
+        return err
+     }
+}
 
-export {NotesAPI,FetchNotes}
+
+export {NotesAPI,FetchNotes,DeleteNote}

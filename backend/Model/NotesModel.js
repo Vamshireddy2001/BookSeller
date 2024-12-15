@@ -11,7 +11,6 @@ const schema=mongoose.Schema({
     genre:{
         type:String,
         required:true,
-        unique:true
     },   
     author:{
         type:String,
