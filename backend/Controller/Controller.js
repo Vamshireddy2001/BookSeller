@@ -1,5 +1,7 @@
 const registerModel=require('../Model/Registermodel.js');
 const bcrypt=require('bcrypt');
+const jwt=require('jsonwebtoken')
+
 const loginPage=async (req,res)=>{
    const loginBody=req.body;
    const {email,password}=loginBody;
@@ -16,7 +18,10 @@ const loginPage=async (req,res)=>{
             if(hashDecodedPassword)
             {
                 res.cookie("username",email,{maxAge:900000,httpOnly:true});
-                res.json({message:"Login successfull!",login:true,user:user.name,'id':user._id});
+                console.log(email);
+                const token=jwt.sign({"userid":user._id},"123456")
+                console.log(token);
+                res.json({message:"Login successfull!",login:true,user:user.name,'id':user._id,token:token});
             }
             else{
                 res.json({message:"Password not correct!",login:false});
@@ -63,7 +68,7 @@ const registerPage=async (req,res)=>{
      {
         console.log("expired");
         res.cookie("username","",{expires:new Date(Date.now())});
-        res.send({cookie:true,msg:"Cookie removed"});
+        res.json({cookie:true,msg:"Cookie removed"});
      }
      else
      {

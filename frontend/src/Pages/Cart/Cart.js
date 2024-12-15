@@ -3,9 +3,10 @@ import Header from '../../Components/Header/Header.js';
 import Footer from '../../Components/Footer/Footer.js';
 import React, { useEffect,useState } from 'react';
 import deleteButton from '../../Assets/deletebutton.png';
-
+import { useNavigate } from 'react-router-dom';
 function Cart()
 {
+  const navigate=useNavigate();
   const [cartItems,setCartItems]=useState([]);
 
   useEffect(() => {
@@ -42,6 +43,16 @@ function Cart()
            ))}
         
             <button onClick={()=>window.location.href="/"}>Continue Shopping</button>
+            <button onClick={()=>{
+              if(cartItems.length>0)
+              navigate('/checkout')
+              else
+              alert("Cart is empty!")
+            }
+            
+            }>Proceed Checkout</button>
+              
+
           </div>
         <Footer/>
         </div>

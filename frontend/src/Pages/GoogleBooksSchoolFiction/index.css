@@ -1,0 +1,54 @@
+.GoogleSellerContainer
+{
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    width:100%;
+    height:auto;
+    flex-direction: column;
+}
+.containermaingoogle
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.subcontainergoogle
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
+    height: auto;
+    margin-left: 100px;
+}
+.GoogleSellerContainer h3
+{
+    margin-left:25px;
+    font-weight:500;
+}
+@media (max-width: 480px)
+{
+    .GoogleSellerContainer
+    {
+        overflow: hidden;
+    }
+    .containermaingoogle
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* background-color: red; */
+    overflow-x: hidden;
+}
+    .subcontainergoogle
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-left:0px;
+    }
+}

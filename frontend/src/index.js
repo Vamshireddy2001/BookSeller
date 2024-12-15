@@ -13,6 +13,9 @@ import GoogleBooksGame from './Pages/GoogleBooksGames/googlebook,.jsx';
 import BookRecommendation from './Pages/BookRecommendation/index.jsx';
 import SearchPage from './Pages/SearchPage/index.js';
 import Notes from './Pages/Notes/index.jsx';
+import FinalCheckout from './Pages/FinalCheckout/index.js';
+import GoogleBooksSchoolFiction from './Pages/GoogleBooksSchoolFiction/googlebook,.jsx';
+import GoogleBooksHigherEducation from './Pages/GoogleBooksHigherEducation/googlebook,.jsx';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,8 +32,11 @@ root.render(
         <Route path='/Googlebooks' element={<GoogleBooks/>}/>
         <Route path='/GoogleBooksGame' element={<GoogleBooksGame/>}/>
         <Route path='/BookRecommendation' element={<BookRecommendation/>}/>
+        <Route path='/SchoolEducation' element={<GoogleBooksSchoolFiction/>}/>
         <Route path='/Search' element={<SearchPage/>}/>
         <Route path='/Notes' element={<Notes/>}/>
+        <Route path='/checkout' element={<FinalCheckout/>}/>
+        <Route path='/highereducation' element={<GoogleBooksHigherEducation/>}/>
       </Routes>
     </Router>
   </React.StrictMode>

@@ -49,3 +49,12 @@
     color: #333d90;
   }
   
+  @media (max-width: 480px) {
+    .notes-display
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }

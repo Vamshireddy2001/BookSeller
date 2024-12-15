@@ -10,9 +10,11 @@ async function LoginUser(userData)
         if(response.data.login)
         {  console.log(response.data.id)
           Cookies.set("id",response.data.id)
-          return response.data;}
+          Cookies.set("token",response.data.token)
+          return response.data;
+        }
         else
-          return false;
+          return response.data;
     }
      catch(err)
      {

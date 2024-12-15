@@ -23,14 +23,12 @@ function Login()
                if(e.login)
                 {
                   alert("Login successfull");
-                  localStorage.setItem("login","true");
                   navigate('/')
                 }
                 else
                 {
 
-                  alert("Login Unsuccessful");
-                  localStorage.setItem("login","false");
+                  alert(e.message);
                   navigate('/Login')
                 }
             }).catch(err=>console.log(err));

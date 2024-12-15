@@ -49,3 +49,20 @@
     color: white;
     letter-spacing:1px;
 }
+@media (max-width: 480px) {
+
+    .SubFooterContainerTwo
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .SubFooterContainerTwo .menu
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

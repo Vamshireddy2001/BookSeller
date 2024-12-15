@@ -45,7 +45,7 @@ function Register()
 
     return (
         <div className='LoginContainer'>
-           <Header/>
+               <Header prop={{"searchRequired":false}}/>
            <div className='LoginForm'>
               <h4>REGISTER</h4>
               <hr style={{marginTop:"30px"}}/>

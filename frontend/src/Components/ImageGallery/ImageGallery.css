@@ -82,8 +82,8 @@
 }
 .ImageContainer .ImageWithText
 {
-   width:180px;
-   height:350px;
+   width:200px;
+   height:400px;
    background-color: white;
    display: flex;
    flex-direction: column;
@@ -108,6 +108,7 @@
     font-size: 18px;
     font-weight:300;
     color: #565656c8;
+    text-align: center;
 }
 .ImageWithText h6:hover
 {

@@ -13,17 +13,6 @@ const schema=mongoose.Schema({
         type:String,
         required:true,
     },
-    cart: [{
-        itemName: {
-            type: String,
-        },
-        itemId: {
-            type: Number
-        },
-        quantity: {
-            type: Number,
-             },
-    }]
 });
 
 const registerModel=mongoose.model("RegisterModel",schema);
