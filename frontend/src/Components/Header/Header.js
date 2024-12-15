@@ -38,7 +38,7 @@ function Header({prop})
         <div class="HeaderContainer"> 
              <div class="SearchNavHeader">
                <img src={logo} width="90" height="90"/>
-               {prop.searcRequired?(
+               {prop.searchRequired?(
                  <div class="SearchBar">
                  <input type="text" name="SearchText" placeholder='Search By Author, title'onChange={(e)=>setSearchValue(e.target.value)}/>
                  <img src ={search} width="35" height="35" onClick={()=>navigate(`/Search?value=${searchValue}`)}/>

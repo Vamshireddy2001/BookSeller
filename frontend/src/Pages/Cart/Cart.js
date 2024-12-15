@@ -35,7 +35,7 @@ function Cart()
             {cartItems.map((item, index) => (
           <div className='Items' key={index}>
             <div className='Section'><img src={item.img} alt={item.description} width="60" height="60"/></div>
-            <div className='Section'><h2>{item.text1}</h2></div>
+            <div className='Section'><h2>{item.description}</h2></div>
             <div className='Section'><h2>{item.price}</h2></div>
             <div className='Section'><h2><img src={deleteButton} width="30" height="30" onClick={()=>deleteItem({text1:item.text1,price:item.price})}/></h2></div>
           </div>

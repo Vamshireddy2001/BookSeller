@@ -5,12 +5,24 @@ import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import ImageGallery from '../../Components/ImageGallery/ImageGallery';
 import ImageGalleryGoogle from '../../Components/ImageGallery/ImageGalleryGoogle';
+import AlertBox from '../../Components/AlertComponent';
 function GoogleBooks()
 {
 
     const [generalBooks,SetGeneralBooks]=useState();
-
     const [codingBooks,SetCodingBooks]=useState();
+
+    const [showAlertBox,setAlertBox]=useState();
+    const [reponseToAlertBox,SetResponseToAlertBox]=useState(false);
+
+    const handleAlertBox=(response)=>{
+      setAlertBox(response)
+  }
+  const handleAlert=(response)=>
+    {
+      SetResponseToAlertBox(response)
+      setAlertBox(false);
+    }
   const fetchGeneral=async ()=>{
         const response=await fetchBooks("General Books")
         if(response)
@@ -25,6 +37,8 @@ function GoogleBooks()
            console.log("work",response.items);
         }
   }
+
+  
   const fetchCoding=async ()=>{
     const response=await fetchBooks("Coding Books")
     if(response)
@@ -36,9 +50,11 @@ function GoogleBooks()
         return hasImage && hasPrice;
       }));
 
-       console.log("work",response.items);
+      //  console.log("work",response.items);
     }
   }
+
+
   useEffect(()=>fetchGeneral,[]);
   useEffect(()=>fetchCoding,[]);
   return (
@@ -52,7 +68,7 @@ function GoogleBooks()
         <div className='flex gallery'>
          <ImageGalleryGoogle prop={{"title":element?.volumeInfo?.title,"img":element?.volumeInfo?.imageLinks?.smallThumbnail?element?.volumeInfo?.imageLinks?.smallThumbnail:element?.volumeInfo?.imageLinks?.thumbnail,
             "price":`$ ${element?.saleInfo?.retailPrice?.amount}`
-         }} key={index}/>
+         }} key={index} showAlertBox={handleAlertBox} responseToAlertBox={reponseToAlertBox}/>
        </div>  
       </> 
            
@@ -60,6 +76,8 @@ function GoogleBooks()
   
   </div>
   <h3 style={{marginLeft:"30px"}}>Coding Books</h3>
+  {showAlertBox ?
+   (<AlertBox alertBox={handleAlert}/>):("")}
   <div className='subcontainergoogle'>
   { 
    codingBooks?.map((element,index)=>(     
@@ -67,7 +85,7 @@ function GoogleBooks()
         <div className='flex gallery'>
          <ImageGalleryGoogle prop={{"title":element?.volumeInfo?.title,"img":element?.volumeInfo?.imageLinks?.smallThumbnail?element?.volumeInfo?.imageLinks?.smallThumbnail:element?.volumeInfo?.imageLinks?.thumbnail,
             "price":`$ ${element?.saleInfo?.retailPrice?.amount}`
-         }} key={index}/>
+         }} key={index} showAlertBox={handleAlertBox}  responseToAlertBox={reponseToAlertBox}/>
        </div>  
       </> 
            

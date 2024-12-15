@@ -38,7 +38,7 @@ function SearchPage()
 
     return (
         <div className='GoogleSellerContainer'>
-          <Header/>
+          <Header prop={{"searchRequired":true}}/>
           <h3 style={{marginLeft:"30px"}}>General Books</h3>
         <div className='subcontainergoogle'>
         { 

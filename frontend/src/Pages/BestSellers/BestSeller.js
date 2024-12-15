@@ -3,14 +3,29 @@ import Footer from '../../Components/Footer/Footer.js';
 import ImageGallery from '../../Components/ImageGallery/ImageGallery.js';
 import Header from '../../Components/Header/Header.js';
 import { bestSellerProp } from '../../data/bookstoredata.js';
+import { useState } from 'react';
+import AlertBox from '../../Components/AlertComponent/index.jsx';
 
 
 function BestSeller()
 {
+     const [showAlertBox,setAlertBox]=useState();
+        const [reponseToAlertBox,SetResponseToAlertBox]=useState(false);
+    
+        const handleAlertBox=(response)=>{
+          setAlertBox(response)
+      }
+      const handleAlert=(response)=>
+        {
+          SetResponseToAlertBox(response)
+          setAlertBox(false);
+        }
          
     return (
         <div className='SellerContainer'>
             <Header prop={{"searchRequired":true}}/>
+            {showAlertBox ?
+   (<AlertBox alertBox={handleAlert}/>):("")}
           <h3>Best Seller</h3>
             { 
             bestSellerProp.map((element,index)=>(     
@@ -20,12 +35,12 @@ function BestSeller()
                     <hr/>
                 </div>
                   <div className='flex gallery'>
-                        <ImageGallery prop={{"title":element.title,"element":element.row.section1}} key={index}/>
-                        <ImageGallery prop={{"title":element.title,"element":element.row.section2}} key={index}/>
-                        <ImageGallery prop={{"title":element.title,"element":element.row.section3}} key={index}/>
-                        <ImageGallery prop={{"title":element.title,"element":element.row.section4}} key={index}/>
-                        <ImageGallery prop={{"title":element.title,"element":element.row.section5}} key={index}/>
-                        <ImageGallery prop={{"title":element.title,"element":element.row.section6}} key={index}/>
+                        <ImageGallery prop={{"title":element.title,"element":element.row.section1}} key={index} showAlertBox={handleAlertBox} responseToAlertBox={reponseToAlertBox}/>
+                        <ImageGallery prop={{"title":element.title,"element":element.row.section2}} key={index} showAlertBox={handleAlertBox} responseToAlertBox={reponseToAlertBox}/>
+                        <ImageGallery prop={{"title":element.title,"element":element.row.section3}} key={index} showAlertBox={handleAlertBox} responseToAlertBox={reponseToAlertBox}/>
+                        <ImageGallery prop={{"title":element.title,"element":element.row.section4}} key={index} showAlertBox={handleAlertBox} responseToAlertBox={reponseToAlertBox}/>
+                        <ImageGallery prop={{"title":element.title,"element":element.row.section5}} key={index} showAlertBox={handleAlertBox} responseToAlertBox={reponseToAlertBox}/>
+                        <ImageGallery prop={{"title":element.title,"element":element.row.section6}} key={index} showAlertBox={handleAlertBox} responseToAlertBox={reponseToAlertBox}/>
                  </div>  
                 </> 
                      
