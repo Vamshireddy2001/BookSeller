@@ -9,4 +9,5 @@ router.post("/register",controller.registerPage);
 
 router.get("/removecookies",controller.removeCookies);
 
+router.get("/",(req,res)=>{res.send("working")})
 module.exports=router;
