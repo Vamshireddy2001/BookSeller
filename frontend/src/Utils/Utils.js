@@ -1,3 +1,3 @@
-const url="https://bookseller-fey8.onrender.com"
+const url="http://localhost:2500"
 
 export default url;

@@ -13,7 +13,7 @@ function Register()
     const [email, setEmail]= useState("");
     const [password, setPassword]= useState("");
     const [confirmPassword, setConfirmPassword]= useState("");
-     
+     const [message,setMessage]=useState()
 
     const dataSubmittted=()=>{
         fetch(`${url}/register`, {
@@ -34,7 +34,8 @@ function Register()
             return res.json();
         })
         .then(data => {
-            console.log("Data submitted!", data.message);
+            setMessage(data.message);
+            // alert(data.message)
             // Add any further logic here
         })
         .catch(err => {
@@ -62,7 +63,9 @@ function Register()
                  <div className='buttons'>
                  <button type='button' onClick={()=>dataSubmittted()}>Register</button>
                  <button type='button' onClick={()=>window.location.href="/Login"}>Login</button>
+                
                  </div>
+                 <label>{message}</label>
               </div>
            </div>
            <Footer/>

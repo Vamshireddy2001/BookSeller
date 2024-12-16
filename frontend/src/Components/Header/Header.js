@@ -16,7 +16,7 @@ function Header({prop})
     const [searchValue,setSearchValue]=useState();
 
     useEffect(()=>{
-        if(Cookies.get("id"))
+        if(Cookies.get("id") && Cookies.get("token"))
            setLoginButton(true);
     },[]);
 
